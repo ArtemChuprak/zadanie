@@ -30,6 +30,16 @@ async function getReposytories(search) {
 async function creatFragment() {
 
     search = input.value;
+
+  if (search.trim() === '') {
+
+        if(search.length === 0) {
+            removeElement();
+        }
+
+        return search;
+    }
+    
     let j = await getReposytories(search);
     let section = document.querySelector('.element');
 
